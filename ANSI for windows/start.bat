@@ -1,14 +1,14 @@
-rem »¶Ó­Ê¹ÓÃstart.bat£¬°æ±¾ºÅ1.2
-rem »áÔÚÄ¿Â¼ÏÂÉú³Étimes.txt¼ÇÂ¼ºÍ¶ÁÈ¡×ÜÆô¶¯´ÎÊý
+rem æ¬¢è¿Žä½¿ç”¨start.batï¼Œç‰ˆæœ¬å·1.2
+rem ä¼šåœ¨ç›®å½•ä¸‹ç”Ÿæˆtimes.txtè®°å½•å’Œè¯»å–æ€»å¯åŠ¨æ¬¡æ•°
 @ECHO OFF
 setlocal enabledelayedexpansion
-rem ÄÚ´æ´óÐ¡,µ¥Î»ÎªMByte
+rem å†…å­˜å¤§å°,å•ä½ä¸ºMByte
 set a=1024
-rem ·þÎñ¶ËºËÐÄÎÄ¼þÃû
+rem æœåŠ¡ç«¯æ ¸å¿ƒæ–‡ä»¶å
 set b=spigot-1.13.2.jar
-rem Èç¹ûÒª¹Ø±Õ¿ØÖÆÌ¨ÑÕÉ«£¬È¥µôÏÂ·½×¢ÊÍ
+rem å¦‚æžœè¦å…³é—­æŽ§åˆ¶å°é¢œè‰²ï¼ŒåŽ»æŽ‰ä¸‹æ–¹æ³¨é‡Š
 rem set c=-nojline
-rem ÒÔÏÂÊÇ´úÂë²¿·Ö
+rem ä»¥ä¸‹æ˜¯ä»£ç éƒ¨åˆ†
 :re1
 cls
 set /a times2=0
@@ -23,16 +23,16 @@ set "d=%~p0"
 set "d=%d:\= %"
 for %%a in (%d%) do set name=%%a
 set /a var=%1+1
-if %var2%==0 (set num= ) else (set num= ÒÑÖØÆô !var2! ´Î )
+if %var2%==0 (set num= ) else (set num= å·²é‡å¯ !var2! æ¬¡ )
 set cnt=0
 for /f "delims=" %%i in ('dir/b/a-d "plugins\*.jar" 2^>nul') do set /a cnt+=1
-if defined cnt (set pl=!cnt! ¸ö²å¼þ) else (set pl=Ã»ÓÐ²å¼þ)
-title %name% ÄÚ´æ%a%M%num%¹²¼ÆÔËÐÐ %times% ´Î %pl%
-echo Æô¶¯Ä¿Â¼ : %cd%
+if defined cnt (set pl=!cnt! ä¸ªæ’ä»¶) else (set pl=æ²¡æœ‰æ’ä»¶)
+title %name% å†…å­˜%a%M%num%å…±è®¡è¿è¡Œ %times% æ¬¡ %pl%
+echo å¯åŠ¨ç›®å½• : %cd%
 echo -------------------------------------------------
-if "%PROCESSOR_ARCHITECTURE:~0,3%" equ "x86" (echo 32Î»¼ÆËã»ú) else (echo 64 Î»¼ÆËã»ú)
-echo ´¦ÀíÆ÷ºËÐÄÊý£º%NUMBER_OF_PROCESSORS% ÏµÍ³£º%OS% Ð¾Æ¬½á¹¹£º%PROCESSOR_ARCHITECTURE%
-echo ÈÕÆÚ£º%DATE% Ê±¼ä£º%time%
+if "%PROCESSOR_ARCHITECTURE:~0,3%" equ "x86" (echo 32ä½è®¡ç®—æœº) else (echo 64 ä½è®¡ç®—æœº)
+echo å¤„ç†å™¨æ ¸å¿ƒæ•°ï¼š%NUMBER_OF_PROCESSORS% ç³»ç»Ÿï¼š%OS% èŠ¯ç‰‡ç»“æž„ï¼š%PROCESSOR_ARCHITECTURE%
+echo æ—¥æœŸï¼š%DATE% æ—¶é—´ï¼š%time%
 echo %pl%
 echo -------------------------------------------------
 echo start.bat version 1.2            Powered by feios
@@ -40,27 +40,27 @@ echo start.bat version 1.2            Powered by feios
 ping -n 1 127.1>nul
 set ret=11
 :re2
-rem NEQ±íÊ¾²»µÈÓÚ
-if %var% NEQ 3 (goto re3) else (goto re4)
+rem NEQè¡¨ç¤ºä¸ç­‰äºŽ
+if %var% NEQ 4 (goto re3) else (goto re4)
 :re3
 set /a ret=ret-1
 ping -n 2 -w 500 127.1>nul
 cls
-echo Æô¶¯Ä¿Â¼ : %cd%
+echo å¯åŠ¨ç›®å½• : %cd%
 echo -------------------------------------------------
-echo %ret% Ãëºó½øÐÐµÚ %var% ´ÎÖØÆô ¹²¼ÆÔËÐÐ %times% ´Î
+echo %ret% ç§’åŽè¿›è¡Œç¬¬ %var% æ¬¡é‡å¯ å…±è®¡è¿è¡Œ %times% æ¬¡
 echo -------------------------------------------------
 echo                                  Powered by feios
-title ·þÎñ¶Ë %name% ½«ÔÚ %ret% Ãëºó½øÐÐµÚ %var% ´ÎÖØÆô
+title æœåŠ¡ç«¯ %name% å°†åœ¨ %ret% ç§’åŽè¿›è¡Œç¬¬ %var% æ¬¡é‡å¯
 if %ret%==0 (call :re1 %var%) else (goto re3)
 :re4
-title [ÒÑÔÝÍ£] ·þÎñ¶Ë %name% ÐèÒª×¢Òâ
+title [å·²æš‚åœ] æœåŠ¡ç«¯ %name% éœ€è¦æ³¨æ„
 echo -------------------------------------------------
-echo ×¢Òâ£º
-echo ÃûÎª %name% µÄ·þÎñ¶Ë×Ô¶¯ÖØÆô %var% ´ÎÁË£¡
-echo Èç¹û²»ÊÇÊÖ¶¯²Ù×÷£¬·þÎñ¶Ë¿ÉÄÜÓÐÖØ´óbug
-echo ·þÎñ¶Ë%pl%
-echo Çë¼ì²élogÎÄ¼þ
+echo æ³¨æ„ï¼š
+echo åä¸º %name% çš„æœåŠ¡ç«¯è‡ªåŠ¨é‡å¯ %var2% æ¬¡äº†ï¼
+echo å¦‚æžœä¸æ˜¯æ‰‹åŠ¨æ“ä½œï¼ŒæœåŠ¡ç«¯å¯èƒ½æœ‰é‡å¤§bug
+echo æœåŠ¡ç«¯%pl%
+echo è¯·æ£€æŸ¥logæ–‡ä»¶
 echo -------------------------------------------------
-echo ³ÌÐòÒÑÔÝÍ££¬°´ÈÎÒâ¼üºöÂÔ´íÎó²¢ÔÙ´ÎÆô¶¯ & pause>nul
+echo ç¨‹åºå·²æš‚åœï¼ŒæŒ‰ä»»æ„é”®å¿½ç•¥é”™è¯¯å¹¶å†æ¬¡å¯åŠ¨ & pause>nul
 call :re1 %var%
