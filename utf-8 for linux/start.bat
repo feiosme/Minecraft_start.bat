@@ -41,7 +41,7 @@ ping -n 1 127.1>nul
 set ret=11
 :re2
 rem NEQ表示不等于
-if %var% NEQ 3 (goto re3) else (goto re4)
+if %var% NEQ 4 (goto re3) else (goto re4)
 :re3
 set /a ret=ret-1
 ping -n 2 -w 500 127.1>nul
@@ -57,7 +57,7 @@ if %ret%==0 (call :re1 %var%) else (goto re3)
 title [已暂停] 服务端 %name% 需要注意
 echo -------------------------------------------------
 echo 注意：
-echo 名为 %name% 的服务端自动重启 %var% 次了！
+echo 名为 %name% 的服务端自动重启 %var2% 次了！
 echo 如果不是手动操作，服务端可能有重大bug
 echo 服务端%pl%
 echo 请检查log文件
